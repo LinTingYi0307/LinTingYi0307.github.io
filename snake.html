@@ -42,7 +42,7 @@
         button:hover {
             background-color: #0056b3;
         }
-        #restartBtn, #closeBtn {
+        #restartBtn, #closeBtn, #returnBtn {
             margin: 0 10px;
         }
     </style>
@@ -52,6 +52,7 @@
 <div id="controls">
     <button id="restartBtn">重新開始</button>
     <button id="closeBtn">關閉</button>
+    <button id="returnBtn">返回</button>
     <div id="score"></div>
     <div id="highScore"></div>
 </div>
@@ -98,6 +99,9 @@
             document.getElementById('restartBtn').addEventListener('click', restartGame);
             document.getElementById('closeBtn').addEventListener('click', () => {
                 window.close();
+            });
+            document.getElementById('returnBtn').addEventListener('click', () => {
+                window.location.href = 'https://lintingyi0307.github.io/%E7%B6%B2%E9%A0%81.html';
             });
 
             // 禁用箭頭鍵的默認行為
