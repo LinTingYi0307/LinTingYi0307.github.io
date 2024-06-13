@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function returnToWebsite() {
-        window.location.href = 'https://lintingyi0307.github.io/%E7%B6%B2%E9%A0%81.html';
+        window.location.href = 'https://lintingyi0307.github.io/%E9%81%8A%E6%88%B2%E5%BA%AB/%E9%81%8A%E6%88%B2%E7%B6%B2%E7%AB%99/%E7%B6%B2%E9%A0%81.html';
     }
 
     restartButton.addEventListener('click', restartGame)
