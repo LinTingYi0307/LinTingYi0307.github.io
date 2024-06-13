@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>遊戲庫</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* 設置網頁的字體 */
+        }
+        .game-grid {
+            display: flex; /* 使用 flexbox 佈局 */
+            flex-wrap: wrap; /* 允許換行 */
+            justify-content: center; /* 水平居中 */
+            gap: 20px; /* 項目之間的間距 */
+            padding: 20px; /* 四周內邊距 */
+        }
+        .game-item {
+            width: 150px; /* 項目的寬度 */
+            display: flex; /* 使用 flexbox 佈局 */
+            flex-direction: column; /* 垂直排列 */
+            align-items: center; /* 水平居中 */
+            justify-content: center; /* 垂直居中 */
+            text-align: center; /* 文本居中 */
+            border: 2px solid #555; /* 邊框樣式 */
+            padding: 10px; /* 內邊距 */
+            border-radius: 5px; /* 圓角 */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 陰影 */
+            background-color: #fff; /* 背景顏色 */
+        }
+        .game-item img {
+            width: 100%; /* 圖片寬度為父容器寬度 */
+            height: auto; /* 保持圖片的寬高比 */
+            display: block; /* 設置為區塊元素 */
+            margin-bottom: 10px; /* 底部外邊距 */
+        }
+        .game-item-wrapper {
+            display: flex; /* 使用 flexbox 佈局 */
+            flex-direction: column; /* 垂直排列 */
+            align-items: center; /* 水平居中 */
+            justify-content: center; /* 垂直居中 */
+            position: relative; /* 相對定位 */
+            height: 100%; /* 高度為父容器高度 */
+        }
+        a {
+            text-decoration: none; /* 移除連結的預設下劃線 */
+            color: inherit; /* 繼承父元素的顏色 */
+            display: flex; /* 使用 flexbox 佈局 */
+            align-items: center; /* 水平居中 */
+            justify-content: center; /* 垂直居中 */
+        }
+        a:hover {
+            color: blue; /* 滑鼠懸停時變藍色 */
+        }
+    </style>
+</head>
+<body>
+    <h1>遊戲庫</h1>
+    <div class="game-grid">
+        <!-- 第一個遊戲項目：貪吃蛇 -->
+        <a href="https://lintingyi0307.github.io/%E9%81%8A%E6%88%B2%E5%BA%AB/%E8%B2%AA%E5%90%83%E8%9B%87/snaketest.html" class="game-item">
+            <div class="game-item-wrapper">
+                <img src="snake.png" alt="貪吃蛇"> <!-- 貪吃蛇圖片 -->
+                <p>貪吃蛇</p> <!-- 貪吃蛇文字標籤 -->
+            </div>
+        </a>
+        
+        <!-- 第二個遊戲項目：踩地雷 -->
+        <a href="https://lintingyi0307.github.io/%E9%81%8A%E6%88%B2%E5%BA%AB/%E8%B8%A9%E5%9C%B0%E9%9B%B7/1.html" class="game-item">
+            <div class="game-item-wrapper">
+                <img src="踩地雷.png" alt="踩地雷"> <!-- 踩地雷圖片 -->
+                <p>踩地雷</p> <!-- 踩地雷文字標籤 -->
+            </div>
+        </a>
+        
+        <!-- 第三個遊戲項目：恐龍 -->
+        <a href="" class="game-item">
+            <div class="game-item-wrapper">
+                <img src="snake.png" alt="恐龍"> <!-- 恐龍 -->
+                <p>恐龍</p> <!-- 恐龍文字標籤 -->
+            </div>
+        </a>
+        
+        <!-- 第四個遊戲項目：2048 -->
+        <a href="" class="game-item">
+            <div class="game-item-wrapper">
+                <img src="snake.png" alt="2048"> <!-- 2048 -->
+                <p>2048</p> <!-- 2048文字標籤 -->
+            </div>
+        </a>
+        
+    </div>
+</body>
+</html>

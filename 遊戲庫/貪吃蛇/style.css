@@ -1,0 +1,54 @@
+/* 設定網頁整體的樣式 */
+body {
+    display: flex; /* 使用 flex 排列 */
+    flex-direction: column; /* 垂直排列 */
+    align-items: center; /* 水平居中 */
+    justify-content: center; /* 垂直居中 */
+    height: 90vh; /* 設定高度為視窗高度的 90% */
+    margin: 0; /* 移除默認的邊距 */
+    background-image: url('background.png'); /* 背景圖片 */
+    background-size: cover; /* 背景圖片填充 */
+    background-position: center; /* 背景圖片居中 */
+}
+
+/* 設定控制按鈕區域的樣式 */
+#controls {
+    display: flex; /* 使用 flex 排列 */
+    justify-content: space-between; /* 按鈕之間的空間均等 */
+    width: 800px; /* 設定寬度 */
+    margin-bottom: 10px; /* 底部邊距 */
+}
+
+/* 設定分數和最高分數的樣式 */
+#score, #highScore {
+    font-size: 24px; /* 字體大小 */
+    color: black; /* 字體顏色 */
+}
+
+/* 設定遊戲容器的樣式 */
+#gameContainer {
+    position: relative; /* 相對定位 */
+    border: 5px solid #000; /* 邊框樣式 */
+    background-color: #fff; /* 背景顏色 */
+}
+
+/* 設定按鈕的樣式 */
+button {
+    padding: 10px 20px; /* 內間距 */
+    font-size: 16px; /* 字體大小 */
+    cursor: pointer; /* 滑鼠指標變成手形 */
+    border: none; /* 無邊框 */
+    border-radius: 5px; /* 邊框圓角 */
+    background-color: #007BFF; /* 按鈕背景顏色 */
+    color: white; /* 按鈕字體顏色 */
+}
+
+/* 設定按鈕的懸停樣式 */
+button:hover {
+    background-color: #0056b3; /* 懸停時的背景顏色 */
+}
+
+/* 設定按鈕的間距 */
+#restartBtn, #returnBtn {
+    margin: 0 10px; /* 左右間距 */
+}
