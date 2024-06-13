@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const bestTimeDiv = document.getElementById('bestTime');
     document.getElementById('restartBtn').addEventListener('click', initGame);
     document.getElementById('returnBtn').addEventListener('click', () => {
-        window.location.href = 'https://lintingyi0307.github.io/%E9%81%8A%E6%88%B2%E5%BA%AB/%E9%81%8A%E6%88%B2%E7%B6%B2%E7%AB%99/%E7%B6%B2%E9%A0%81.html'; // 返回按鈕事件處理
+        window.location.href = 'https://lintingyi0307.github.io/%E9%81%8A%E6%88%B2%E5%BA%AB/%E9%81%8A%E6%88%B2%E7%B6%B2%E7%AB%99/%E7%B6%B2%E9%A0%81.html';
     });
 
     bestTimeDiv.textContent = `最快時間：${bestTime === '-' ? '-' : bestTime + '秒'}`;
@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 cell.dataset.col = col;
                 cell.addEventListener('click', onCellClick);
                 cell.addEventListener('contextmenu', onCellRightClick);
+                cell.addEventListener('auxclick', onCellMiddleClick); // 新增中鍵點擊事件
                 gameContainer.appendChild(cell);
             }
         }
@@ -125,6 +126,32 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('flagsLeft').textContent = `剩餘旗幟：${flagsLeft}`;
     }
 
+    function onCellMiddleClick(event) {
+        if (event.button !== 1) return; // 確保是中鍵點擊
+        event.preventDefault();
+        const cell = event.target;
+        const row = parseInt(cell.dataset.row);
+        const col = parseInt(cell.dataset.col);
+
+        if (gameOver || !board[row][col].revealed) return;
+
+        let adjacentMines = 0;
+        for (let i = -1; i <= 1; i++) {
+            for (let j = -1; j <= 1; j++) {
+                const newRow = row + i;
+                const newCol = col + j;
+                if (newRow >= 0 && newRow < numRows && newCol >= 0 && newCol < numCols && board[newRow][newCol].mine) {
+                    adjacentMines++;
+                }
+            }
+        }
+
+        if (adjacentMines === board[row][col].count) {
+            revealAdjacentCells(row, col, true);
+            checkWin();
+        }
+    }
+
     function revealCell(row, col) {
         const cell = document.querySelector(`[data-row='${row}'][data-col='${col}']`);
         cell.classList.add('revealed');
@@ -138,15 +165,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function revealAdjacentCells(row, col) {
+    function revealAdjacentCells(row, col, excludeFlags = false) {
         for (let i = -1; i <= 1; i++) {
             for (let j = -1; j <= 1; j++) {
                 const newRow = row + i;
                 const newCol = col + j;
                 if (newRow >= 0 && newRow < numRows && newCol >= 0 && newCol < numCols && !board[newRow][newCol].revealed) {
+                    if (excludeFlags && board[newRow][newCol].flagged) continue;
+                    if (board[newRow][newCol].mine) {
+                        gameOver = true;
+                        clearInterval(timerInterval);
+                        revealMines();
+                        alert('遊戲結束！');
+                        return;
+                    }
                     revealCell(newRow, newCol);
                     if (board[newRow][newCol].count === 0) {
-                        revealAdjacentCells(newRow, newCol);
+                        revealAdjacentCells(newRow, newCol, excludeFlags);
                     }
                 }
             }
