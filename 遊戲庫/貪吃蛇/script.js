@@ -71,7 +71,7 @@
             food = createVector(x, y); // 設置食物位置
 
             validLocation = true;
-            for (let part of snake.body) { // 確保食物位置不在蛇
+            for (let part of snake.body) { // 確保食物位置不在蛇上
                 if (part.x === food.x && part.y === food.y) {
                     validLocation = false; // 如果食物位置與蛇身位置重疊，則位置無效
                     break;
