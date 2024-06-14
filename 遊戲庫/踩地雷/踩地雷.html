@@ -4,18 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>踩地雷遊戲</title>
+    <!-- 引入外部樣式表 -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- 頁面標題 -->
     <h1>踩地雷</h1>
+    
+    <!-- 控制面板 -->
     <div id="controls">
+        <!-- 顯示剩餘旗幟數量 -->
         <span id="flagsLeft">剩餘旗幟：10</span>
+        <!-- 顯示計時器 -->
         <span id="timer">時間：0秒</span>
+        <!-- 重新開始遊戲按鈕 -->
         <button id="restartBtn">重新開始</button>
-        <button id="returnBtn">返回</button> <!-- 新增返回按鈕 -->
+        <!-- 新增返回按鈕，返回遊戲網站 -->
+        <button id="returnBtn"><a href="https://lintingyi0307.github.io/%E9%81%8A%E6%88%B2%E5%BA%AB/%E9%81%8A%E6%88%B2%E7%B6%B2%E7%AB%99/%E7%B6%B2%E9%A0%81.html" target="_blank">返回</a></button>
     </div>
+    
+    <!-- 顯示最快完成遊戲的時間 -->
     <div id="bestTime">最快時間：-</div>
+    
+    <!-- 遊戲主容器 -->
     <div id="game-container"></div>
+    
+    <!-- 引入外部腳本 -->
     <script src="script.js"></script>
 </body>
 </html>
