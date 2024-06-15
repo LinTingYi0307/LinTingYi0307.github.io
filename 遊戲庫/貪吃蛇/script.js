@@ -15,17 +15,24 @@
     let snakeBodyJpg; // 蛇身體的圖片
     let snakeTailJpg; // 蛇尾巴的圖片
     let foodJpg; // 食物的圖片
-    // let eatSound; // 吃到食物的音效
     let eatSound = document.getElementById('eatSound');
     let gameOverSound = document.getElementById('gameOverSound');
-    // JavaScript 控制音訊元素的範例
     let backgroundMusic = document.getElementById('backgroundMusic');
     backgroundMusic.volume = 0.05; // 調整音量（範圍從 0.0 到 1.0）
     // 你也可以使用 backgroundMusic.play()、backgroundMusic.pause() 等方法來控制播放、暫停等操作。
     // 音量滑桿事件處理
     document.getElementById('volumeSlider').addEventListener('input', (event) => {
-    backgroundMusic.volume = event.target.value;
-});
+        backgroundMusic.volume = event.target.value;
+    });
+    document.getElementById('muteToggle').addEventListener('click', () => {
+        if (backgroundMusic.volume != 0) {
+            backgroundMusic.volume = 0;
+            document.getElementById('muteToggle').src = "mute.png"; // 靜音時的圖片
+        } else {
+            backgroundMusic.volume = document.getElementById('volumeSlider').value;
+            document.getElementById('muteToggle').src = "unmute.png"; // 取消靜音時的圖片
+        }
+    });
     // 預加載圖片
     function preload() {
         grassJpg = loadImage('grass.png'); // 加載草地圖片
