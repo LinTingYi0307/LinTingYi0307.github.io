@@ -12,6 +12,21 @@
             font-size: 16px;
             margin: 0;
             padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #000;
+            color: white;
+            padding: 8px;
+            z-index: 100;
+        }
+        .skip-link:focus {
+            top: 0;
         }
         h1 {
             text-align: center;
@@ -40,8 +55,9 @@
             background-color: #fff;
             transition: transform 0.3s ease;
         }
-        .game-item:hover {
+        .game-item:hover, .game-item:focus {
             transform: translateY(-5px);
+            outline: 3px solid #0066cc;
         }
         .game-item img {
             width: 100%;
@@ -65,8 +81,18 @@
             align-items: center;
             justify-content: center;
         }
-        a:hover {
-            color: blue;
+        a:hover, a:focus {
+            color: #0066cc;
+        }
+        footer {
+            margin-top: auto;
+            padding: 10px;
+            text-align: right;
+        }
+        .copyright {
+            margin: 0;
+            font-size: 0.8em;
+            color: #666;
         }
 
         @media screen and (max-width: 600px) {
@@ -79,6 +105,9 @@
             .game-item {
                 width: 90%;
                 margin-bottom: 20px;
+            }
+            .copyright {
+                font-size: 0.7em;
             }
         }
 
@@ -127,5 +156,8 @@
             </div>
         </a>
     </div>
+    <footer role="contentinfo">
+        <p class="copyright">&copy; 2024 遊戲庫。保留所有權利。</p>
+    </footer>
 </body>
 </html>
