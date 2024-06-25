@@ -7,51 +7,87 @@
     <link rel="icon" href="https://lintingyi0307.github.io/%E9%81%8A%E6%88%B2%E5%BA%AB/%E9%81%8A%E6%88%B2%E7%B6%B2%E7%AB%99/favicon.png" type="image/x-icon">
     <style>
         body {
-            font-family: Arial, sans-serif; /* 設置網頁的字體 */
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            padding: 20px 0;
         }
         .game-grid {
-            display: flex; /* 使用 flexbox 佈局 */
-            flex-wrap: wrap; /* 允許換行 */
-            justify-content: center; /* 水平居中 */
-            gap: 20px; /* 項目之間的間距 */
-            padding: 20px; /* 四周內邊距 */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
         .game-item {
-            width: 150px; /* 項目的寬度 */
-            display: flex; /* 使用 flexbox 佈局 */
-            flex-direction: column; /* 垂直排列 */
-            align-items: center; /* 水平居中 */
-            justify-content: center; /* 垂直居中 */
-            text-align: center; /* 文本居中 */
-            border: 2px solid #555; /* 邊框樣式 */
-            padding: 10px; /* 內邊距 */
-            border-radius: 5px; /* 圓角 */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 陰影 */
-            background-color: #fff; /* 背景顏色 */
+            width: 150px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: 2px solid #555;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            transition: transform 0.3s ease;
+        }
+        .game-item:hover {
+            transform: translateY(-5px);
         }
         .game-item img {
-            width: 100%; /* 圖片寬度為父容器寬度 */
-            height: auto; /* 保持圖片的寬高比 */
-            display: block; /* 設置為區塊元素 */
-            margin-bottom: 10px; /* 底部外邊距 */
+            width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+            max-width: 100%;
         }
         .game-item-wrapper {
-            display: flex; /* 使用 flexbox 佈局 */
-            flex-direction: column; /* 垂直排列 */
-            align-items: center; /* 水平居中 */
-            justify-content: center; /* 垂直居中 */
-            position: relative; /* 相對定位 */
-            height: 100%; /* 高度為父容器高度 */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            height: 100%;
         }
         a {
-            text-decoration: none; /* 移除連結的預設下劃線 */
-            color: inherit; /* 繼承父元素的顏色 */
-            display: flex; /* 使用 flexbox 佈局 */
-            align-items: center; /* 水平居中 */
-            justify-content: center; /* 垂直居中 */
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         a:hover {
-            color: blue; /* 滑鼠懸停時變藍色 */
+            color: blue;
+        }
+
+        @media screen and (max-width: 600px) {
+            body {
+                font-size: 14px;
+            }
+            .game-grid {
+                flex-direction: column;
+            }
+            .game-item {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media screen and (min-width: 601px) and (max-width: 1024px) {
+            .game-grid {
+                justify-content: space-around;
+            }
+            .game-item {
+                width: 45%;
+            }
         }
     </style>
 </head>
@@ -89,7 +125,6 @@
                 <p>2048</p> <!-- 2048文字標籤 -->
             </div>
         </a>
-        
     </div>
 </body>
 </html>
