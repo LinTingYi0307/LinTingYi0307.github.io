@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #000;
+    color: white;
+    padding: 8px;
+    z-index: 100;
+}
+.skip-link:focus {
+    top: 0;
+}
+h1 {
+    text-align: center;
+    padding: 20px 0;
+}
+.game-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.game-item {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid #555;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    transition: transform 0.3s ease;
+}
+.game-item:hover, .game-item:focus {
+    transform: translateY(-5px);
+    outline: 3px solid #0066cc;
+}
+.game-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 10px;
+    max-width: 100%;
+}
+.game-item-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+a:hover, a:focus {
+    color: #0066cc;
+}
+footer {
+    margin-top: auto;
+    padding: 10px;
+    text-align: right;
+}
+.copyright {
+    margin: 0;
+    font-size: 0.8em;
+    color: #666;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        font-size: 14px;
+    }
+    .game-grid {
+        flex-direction: column;
+    }
+    .game-item {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+    .copyright {
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+    .game-grid {
+        justify-content: space-around;
+    }
+    .game-item {
+        width: 45%;
+    }
+}
