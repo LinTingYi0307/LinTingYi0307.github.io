@@ -71,7 +71,7 @@ p {
     text-decoration: none;
     color: #fff;
     width: 100px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
     opacity: 0;
     transform: scale(0.9);
     animation: fadeInScale 1s forwards;
@@ -97,13 +97,22 @@ p {
     animation-delay: 0.9s;
 }
 
+.social-link:nth-child(4) {
+    animation-delay: 1.1s;
+}
+
+.social-link:nth-child(5) {
+    animation-delay: 1.3s; /* 为 Discord 链接设置延迟动画效果 */
+}
+
 .social-link:hover {
     background-color: #555;
+    transform: scale(1.05); /* 放大图标的动画效果 */
 }
 
 .social-link:hover .icon {
-    transform: scale(1.2);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    transform: scale(1.5) rotate(360deg); /* 图标放大并旋转 */
+    box-shadow: 0 4px 15px rgba(252, 252, 252, 0.5); /* 添加阴影效果 */
 }
 
 .icon {
@@ -125,6 +134,14 @@ p {
 
 .icon.facebook {
     background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg');
+}
+
+.icon.github {
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg');
+}
+
+.icon.discord {
+    background-image: url('https://dl.memuplay.com/new_market/img/com.discord.icon.2024-03-06-12-12-03.png');
 }
 
 /* 浅色主题 */
