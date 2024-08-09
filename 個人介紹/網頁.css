@@ -219,7 +219,10 @@ body.light-theme .theme-toggle:hover {
     z-index: 1000;
     text-align: center; /* 文字居中 */
 }
-
+body.light-theme .clock {
+    background-color: #ddd; /* 浅色主题下的背景色 */
+    color: #333; /* 浅色主题下的文字颜色 */
+}
 
 /* 响应式设计 */
 @media (max-width: 768px) {
