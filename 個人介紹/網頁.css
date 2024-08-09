@@ -143,6 +143,20 @@ p {
 .icon.discord {
     background-image: url('https://dl.memuplay.com/new_market/img/com.discord.icon.2024-03-06-12-12-03.png');
 }
+.calendar {
+    margin: 20px auto;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #222;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.calendar h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #fff;
+}
 
 /* 浅色主题 */
 body.light-theme {
@@ -190,6 +204,22 @@ body.light-theme .theme-toggle {
 body.light-theme .theme-toggle:hover {
     background-color: #ccc;
 }
+
+/* 時間顯示樣式 */
+.clock {
+    position: fixed;
+    bottom: 20px;  /* 調整距離底部的距離 */
+    right: 20px;   /* 調整距離右邊的距離 */
+    background-color: #222;
+    color: #fff;
+    padding: 10px 15px;  /* 調整內邊距 */
+    border-radius: 5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    font-size: 20px; /* 調整字體大小 */
+    z-index: 1000;
+    text-align: center; /* 文字居中 */
+}
+
 
 /* 响应式设计 */
 @media (max-width: 768px) {
