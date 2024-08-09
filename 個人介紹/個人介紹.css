@@ -1,0 +1,62 @@
+body{
+    max-width: 600px;
+    max-height: 900px;
+    font-family: 標楷體;
+    margin: 0 auto;
+    font-size: 16px;
+}
+.righth{
+    float: right;
+    width:33%;
+    margin-top: 20px;
+}
+.righth1{
+    width: 50%;
+}
+.lefth{
+    float: left;
+    width: 33%;
+    margin-top: 20px;
+}
+.h3{
+    text-align:center;
+    /*置中*/
+    color:white;
+    /*文字顏色*/
+    font-size: 20px;
+    height: 40px;
+    width:34%;
+    line-height:10px;
+    margin-left: 33%;
+    margin-right: 33%;
+    margin-top: 0px;
+}
+.tablea{
+    text-align: center;
+    border-color: black;
+}
+.left1{
+    width: 10%;
+}
+.left{
+    height: auto;
+    width: 34%;
+    float: left;
+}
+.right{
+    margin-top: 0px;
+    height: auto;
+    width: 66%;
+    background-color:rgb(255, 255, 255);
+    float: left;
+}
+.h3r{
+    margin-left: 0;
+    width:50%;
+}
+.li{
+    line-height: 1cm;
+}
+.li2{
+    line-height: 1.8em;
+}
