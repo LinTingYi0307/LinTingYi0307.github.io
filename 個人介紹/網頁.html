@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的個人頁面</title>
+    <title>我的个人页面 - 林挺翌的个人网站</title>
     <link rel="stylesheet" href="網頁.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 </head>
 <body>
-    <button class="theme-toggle" id="theme-toggle">切换主题</button>
+    <button class="theme-toggle" id="theme-toggle" aria-label="切换主题">切换主题</button>
     <div class="container">
         <h1>我的個人頁面</h1>
         <p>歡迎來到我的個人頁面！</p>
@@ -16,21 +17,21 @@
             <img src="個人介紹.jpg" alt="我的照片" class="profile-pic">
             <p>你好，我是林挺翌...</p>
         </div>
-        <p>這裡是我的社交媒體連結：</p>
-        <div class="social-links">
+        <h2 id="social-links-heading" class="sr-only">這裡是我的社交媒體連結：</h2>
+        <div class="social-links" role="group" aria-labelledby="social-links-heading">
             <!-- Instagram Link -->
-            <a href="https://www.instagram.com/im.tingyi/" class="social-link" target="_blank">
-                <div class="icon instagram"></div>
+            <a href="https://www.instagram.com/im.tingyi/" class="social-link" target="_blank" aria-label="访问 Instagram 个人页面">
+                <div class="icon instagram" aria-hidden="true"></div>
                 Instagram
             </a>
             <!-- Line Add Friend Link -->
-            <a href="https://line.me/ti/p/OamkV79JO3" class="social-link" target="_blank">
-                <div class="icon line"></div>
+            <a href="https://line.me/ti/p/OamkV79JO3" class="social-link" target="_blank" aria-label="访问 Line 个人页面">
+                <div class="icon line" aria-hidden="true"></div>
                 Line
             </a>
-            <!-- facebook Link -->
-            <a href="https://www.facebook.com/profile.php?id=100009687331551&locale=zh_TW" class="social-link" target="_blank">
-                <div class="icon facebook"></div>
+            <!-- Facebook Link -->
+            <a href="https://www.facebook.com/profile.php?id=100009687331551&locale=zh_TW" class="social-link" target="_blank" aria-label="访问 Facebook 个人页面">
+                <div class="icon facebook" aria-hidden="true"></div>
                 Facebook
             </a>
         </div>
