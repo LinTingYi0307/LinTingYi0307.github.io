@@ -11,7 +11,7 @@ body {
 .page-container {
     display: flex;
     justify-content: center; /* 使內容在中間對齊 */
-    max-width: 80%;
+    max-width: 1200px;
     margin: 50px auto;
     padding: 0;
     height: calc(100vh - 40px); /* 設置高度以確保滾動效果 */
@@ -46,10 +46,10 @@ body {
 
 /* 中間列樣式 */
 .center-column {
-    margin: 0 10%; /* 縮小左右列間距，讓中間部分變大 */
+    margin: 0 20%; /* 確保左右列之間有相同的間距 */
     padding: 20px;
     overflow-y: auto;
-    height: 110%; /* 使中間列佔滿整個容器的高度 */
+    height: 100%; /* 使中間列佔滿整個容器的高度 */
     background-color: #222; /* 默認背景色 */
     box-sizing: border-box; /* 包括內邊距在內 */
 }
@@ -66,7 +66,7 @@ body {
 
 /* 調整中間列的寬度 */
 .page-container .center-column {
-    flex-basis: 70%; /* 增大中間列寬度 */
+    flex-basis: 60%; /* 增大中間列寬度 */
     padding: 20px;
 }
 
@@ -267,6 +267,8 @@ body.light-theme .clock {
 }
 
 /* 響應式設計 */
+
+/* 大屏幕 (1024px 以上) */
 @media (max-width: 1024px) {
     .page-container {
         flex-direction: column;
@@ -278,7 +280,19 @@ body.light-theme .clock {
     }
 }
 
+/* 中屏幕 (768px 以上) */
 @media (max-width: 768px) {
+    .left-column, .right-column {
+        width: 100%;
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .center-column {
+        margin: 0;
+        width: 100%;
+    }
+
     .social-links {
         flex-direction: row;
         flex-wrap: wrap;
@@ -297,7 +311,21 @@ body.light-theme .clock {
     }
 }
 
+/* 小屏幕 (480px 以上) */
 @media (max-width: 480px) {
+    .left-column, .right-column {
+        width: 100%;
+        position: relative;
+        margin-bottom: 20px;
+        padding: 10px;
+    }
+
+    .center-column {
+        margin: 0;
+        width: 100%;
+        padding: 10px;
+    }
+
     .social-link {
         width: 100%;
         padding: 8px;
@@ -306,5 +334,18 @@ body.light-theme .clock {
     .icon {
         width: 35px;
         height: 35px;
+    }
+
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+        padding: 8px 10px;
+    }
+
+    .clock {
+        bottom: 10px;
+        right: 10px;
+        padding: 8px 10px;
+        font-size: 18px;
     }
 }
