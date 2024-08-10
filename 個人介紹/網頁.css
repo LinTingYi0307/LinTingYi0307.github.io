@@ -75,7 +75,7 @@ body {
     box-sizing: border-box;
 }
 
-/* 左列和右列樣式與先前相同 */
+/* 左列樣式 */
 .about-me {
     background-color: #222;
     border-radius: 10px;
@@ -124,6 +124,7 @@ body {
 .social-link:nth-child(4) { animation-delay: 1.1s; }
 .social-link:nth-child(5) { animation-delay: 1.3s; }
 .social-link:nth-child(6) { animation-delay: 1.5s; }
+
 .social-link:hover {
     background-color: #555;
     transform: translateX(5px);
@@ -167,12 +168,6 @@ body {
     opacity: 1; /* 確保可見性 */
     transform: none; /* 取消位移效果 */
 }
-
-.hidden-section {
-    opacity: 1 !important;
-    transform: none !important;
-}
-
 
 .hidden-section.visible {
     opacity: 1;
@@ -294,15 +289,17 @@ body.light-theme .clock {
 
 /* 中屏幕 (768px 以上) */
 @media (max-width: 768px) {
+    .toggle-button {
+        display: block;
+    }
+
     .left-column, .right-column {
-        width: 100%;
-        position: relative;
-        margin-bottom: 20px;
+        display: none; /* 隱藏左半部和右半部 */
     }
 
     .center-column {
-        margin: 0;
-        width: 100%;
+        margin: 0; /* 去掉左右空隙 */
+        width: 100%; /* 讓中間部分佔滿整個寬度 */
     }
 
     .social-links {
@@ -361,3 +358,25 @@ body.light-theme .clock {
         font-size: 18px;
     }
 }
+
+/* 切換按鈕樣式 */
+.toggle-button {
+    position: fixed;
+    top: 60px; /* 根據需要調整位置 */
+    left: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#toggle-right {
+    left: auto;
+    right: 10px;
+    top: 60px;
+}
+
+
