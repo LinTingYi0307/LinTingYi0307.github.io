@@ -3,85 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的個人頁面 - 林挺翌的個人網站</title>
+    <title>我的個人頁面</title>
     <link rel="stylesheet" href="網頁.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
 </head>
 <body>
-    <button class="theme-toggle" id="theme-toggle" aria-label="切換主題">切換主題</button>
-    <div class="container">
-        <h1>我的個人頁面</h1>
-        <p>歡迎來到我的個人頁面！</p>
-        <p>這裡是我的簡介：</p>
-        <div class="about-me">
-            <img src="個人介紹.jpg" alt="我的照片" class="profile-pic">
-            <p>你好，我是林挺翌...</p>
+    <button id="theme-toggle" class="theme-toggle">切換主題</button>
+
+    <div class="page-container">
+        <div class="left-column">
+            <div class="about-me">
+                <img src="個人介紹.jpg" alt="我的照片" class="profile-pic">
+                <h1>林挺翌的個人頁面</h1>
+                <p>你好，我是林挺翌...</p>
+            </div>
+
+            <div class="social-links" role="group" aria-labelledby="social-links-heading">
+                <h2 id="social-links-heading" class="sr-only">社交媒體連結</h2>
+                <a href="https://www.instagram.com/im.tingyi/" class="social-link" target="_blank" aria-label="訪問 Instagram 個人頁面">
+                    <div class="icon instagram" aria-hidden="true"></div>
+                    Instagram
+                </a>
+                <a href="https://line.me/ti/p/OamkV79JO3" class="social-link" target="_blank" aria-label="訪問 Line 個人頁面">
+                    <div class="icon line" aria-hidden="true"></div>
+                    Line
+                </a>
+                <a href="https://www.facebook.com/profile.php?id=100009687331551&locale=zh_TW" class="social-link" target="_blank" aria-label="訪問 Facebook 個人頁面">
+                    <div class="icon facebook" aria-hidden="true"></div>
+                    Facebook
+                </a>
+                <a href="https://github.com/your-username" class="social-link" target="_blank" aria-label="訪問 GitHub 個人頁面">
+                    <div class="icon github" aria-hidden="true"></div>
+                    GitHub
+                </a>
+                <a href="https://discord.gg/3gDmhzujNA" class="social-link" target="_blank" aria-label="訪問 Discord 個人頁面">
+                    <div class="icon discord" aria-hidden="true"></div>
+                    Discord
+                </a>
+            </div>
         </div>
-        <h2 id="social-links-heading" class="sr-only">這裡是我的社交媒體連結：</h2>
-        <div class="social-links" role="group" aria-labelledby="social-links-heading">
-            <!-- Instagram Link -->
-            <a href="https://www.instagram.com/im.tingyi/" class="social-link" target="_blank" aria-label="訪問 Instagram 個人頁面">
-                <div class="icon instagram" aria-hidden="true"></div>
-                Instagram
-            </a>
-            <!-- Line Add Friend Link -->
-            <a href="https://line.me/ti/p/OamkV79JO3" class="social-link" target="_blank" aria-label="訪問 Line 個人頁面">
-                <div class="icon line" aria-hidden="true"></div>
-                Line
-            </a>
-            <!-- Facebook Link -->
-            <a href="https://www.facebook.com/profile.php?id=100009687331551&locale=zh_TW" class="social-link" target="_blank" aria-label="訪問 Facebook 個人頁面">
-                <div class="icon facebook" aria-hidden="true"></div>
-                Facebook
-            </a>
-            <!-- GitHub Link -->
-            <a href="https://github.com/your-username" class="social-link" target="_blank" aria-label="訪問 GitHub 个人页面">
-                <div class="icon github" aria-hidden="true"></div>
-                GitHub
-            </a>
-            <!-- Discord Link -->
-            <a href="https://discord.gg/3gDmhzujNA" class="social-link" target="_blank" aria-label="访问 Discord 个人页面">
-                <div class="icon discord" aria-hidden="true"></div>
-                Discord
-            </a>
-        </div>
-        <div class="content">
-            <!-- 第一块内容 -->
+
+        <div class="center-column">
             <section class="hidden-section section1">
-                <h2>第一块内容</h2>
-                <p>这里是第一块内容的描述。这里是第一块内容的描述。这里是第一块内容的描述。这里是第一块内容的描述。
-                    这里是第一块内容的描述。这里是第一块内容的描述。这里是第一块内容的描述。这里是第一块内容的描述。这里是第一块内容的描述。
-                    这里是第一块内容的描述。这里是第一块内容的描述。这里是第一块内容的描述。这里是第一块内容的描述。这里是第一块内容的描述。
-                    这里是第一块内容的描述。这里是第一块内容的描述。这里是第一块内容的描述。这里是第一块内容的描述。这里是第一块内容的描述。
-
-                </p>
+                <h2>第一塊內容</h2>
+                <p>這裡是第一塊內容的描述。這裡是第一塊內容的描述。這裡是第一塊內容的描述。這裡是第一塊內容的描述。
+                這裡是第一塊內容的描述。這裡是第一塊內容的描述。這裡是第一塊內容的描述。這裡是第一塊內容的描述。這裡是第一塊內容的描述。
+                這裡是第一塊內容的描述。這裡是第一塊內容的描述。這裡是第一塊內容的描述。這裡是第一塊內容的描述。這裡是第一塊內容的描述。
+                這裡是第一塊內容的描述。這裡是第一塊內容的描述。這裡是第一塊內容的描述。這裡是第一塊內容的描述。這裡是第一塊內容的描述。</p>
             </section>
 
-            <!-- 第二块内容 -->
             <section class="hidden-section section2">
-                <h2>第二块内容</h2>
-                <p>这里是第二块内容的描述。这里是第二块内容的描述。这里是第二块内容的描述。这里是第二块内容的描述。
-                    这里是第二块内容的描述。这里是第二块内容的描述。这里是第二块内容的描述。这里是第二块内容的描述。
-                    这里是第一块内容的描述。这里是第一块内容的描述。这里是第一块内容的描述。这里是第一块内容的描述。
-                </p>
+                <h2>第二塊內容</h2>
+                <p>這裡是第二塊內容的描述。這裡是第二塊內容的描述。這裡是第二塊內容的描述。這裡是第二塊內容的描述。
+                這裡是第二塊內容的描述。這裡是第二塊內容的描述。這裡是第二塊內容的描述。這裡是第二塊內容的描述。
+                這裡是第一塊內容的描述。這裡是第一塊內容的描述。這裡是第一塊內容的描述。這裡是第一塊內容的描述。</p>
             </section>
 
-            <!-- 第三块内容 -->
             <section class="hidden-section section3">
-                <h2>第三块内容</h2>
-                <p>这里是第三块内容的描述。这里是第三块内容的描述。
-                    这里是第三块内容的描述。这里是第三块内容的描述。这里是第三块内容的描述。这里是第三块内容的描述。
-                    这里是第三块内容的描述。这里是第三块内容的描述。这里是第三块内容的描述。这里是第三块内容的描述。
-                    这里是第三块内容的描述。这里是第三块内容的描述。这里是第三块内容的描述。这里是第三块内容的描述。这里是第三块内容的描述。
-                    这里是第三块内容的描述。这里是第三块内容的描述。这里是第三块内容的描述。这里是第三块内容的描述。
-                    
-                </p>
+                <h2>第三塊內容</h2>
+                <p>這裡是第三塊內容的描述。這裡是第三塊內容的描述。
+                這裡是第三塊內容的描述。這裡是第三塊內容的描述。這裡是第三塊內容的描述。這裡是第三塊內容的描述。
+                這裡是第三塊內容的描述。這裡是第三塊內容的描述。這裡是第三塊內容的描述。這裡是第三塊內容的描述。
+                這裡是第三塊內容的描述。這裡是第三塊內容的描述。這裡是第三塊內容的描述。這裡是第三塊內容的描述。這裡是第三塊內容的描述。
+                這裡是第三塊內容的描述。這裡是第三塊內容的描述。這裡是第三塊內容的描述。這裡是第三塊內容的描述。</p>
+            </section>
+        </div>
+
+        <div class="right-column">
+            <section class="new-section">
+                <h2>新增區域</h2>
+                <p>這裡是新增區域的內容。您可以在這裡添加任何您想要的信息，比如最新的項目、技能列表、或者是一個小型的博客文章等。</p>
             </section>
         </div>
     </div>
-    
+
     <div id="clock" class="clock"></div>
-    
+
     <script src="網頁.js"></script>
 </body>
 </html>
