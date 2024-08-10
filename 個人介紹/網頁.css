@@ -162,6 +162,18 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
+.hidden-section.section4, .hidden-section.section5 {
+    display: block; /* 確保顯示區塊 */
+    opacity: 1; /* 確保可見性 */
+    transform: none; /* 取消位移效果 */
+}
+
+.hidden-section {
+    opacity: 1 !important;
+    transform: none !important;
+}
+
+
 .hidden-section.visible {
     opacity: 1;
     transform: translateY(0);
