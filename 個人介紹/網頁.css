@@ -8,34 +8,25 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-.container {
-    text-align: center;
+.page-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
     margin: 50px auto;
+    padding: 0 20px;
 }
 
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.left-column, .center-column, .right-column {
+    flex-basis: 30%;
+    margin: 0 10px;
 }
 
-h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-p {
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
+/* 左列樣式 */
 .about-me {
-    margin: 20px auto;
-    max-width: 600px;
-    padding: 20px;
     background-color: #222;
     border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
@@ -49,24 +40,20 @@ p {
 
 .social-links {
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-top: 20px;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .social-link {
     display: flex;
-    flex-direction: column;
     align-items: center;
     background-color: #333;
-    padding: 15px;
-    border-radius: 10px;
+    padding: 10px;
+    border-radius: 5px;
     text-decoration: none;
     color: #fff;
-    width: 100px;
     transition: background-color 0.3s ease, transform 0.3s ease;
     opacity: 0;
-    transform: scale(0.9);
     animation: fadeInScale 1s forwards;
 }
 
@@ -82,67 +69,84 @@ p {
 .social-link:nth-child(3) { animation-delay: 0.9s; }
 .social-link:nth-child(4) { animation-delay: 1.1s; }
 .social-link:nth-child(5) { animation-delay: 1.3s; }
-
+.social-link:nth-child(6) { animation-delay: 1.5s; }
 .social-link:hover {
     background-color: #555;
-    transform: scale(1.05);
-}
-
-.social-link:hover .icon {
-    transform: scale(1.5) rotate(360deg);
-    box-shadow: 0 4px 15px rgba(252, 252, 252, 0.5);
+    transform: translateX(5px);
 }
 
 .icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 10px;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
     background-size: contain;
     background-repeat: no-repeat;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.social-link:hover .icon {
+    transform: scale(1.2) rotate(360deg);
+    box-shadow: 0 4px 15px rgba(252, 252, 252, 0.5);
+}
+
+/* 社交媒體圖標 */
 .icon.instagram { background-image: url('https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png'); }
 .icon.line { background-image: url('https://upload.wikimedia.org/wikipedia/commons/4/41/LINE_logo.svg'); }
 .icon.facebook { background-image: url('https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg'); }
 .icon.github { background-image: url('https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg'); }
 .icon.discord { background-image: url('https://dl.memuplay.com/new_market/img/com.discord.icon.2024-03-06-12-12-03.png'); }
 
-.calendar {
-    margin: 20px auto;
-    max-width: 800px;
-    padding: 20px;
+/* 中間列樣式 */
+.hidden-section {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    margin-bottom: 30px;
     background-color: #222;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
-.calendar h2 {
-    font-size: 20px;
+.hidden-section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hidden-section.invisible {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+/* 右列樣式 */
+.right-column .new-section {
+    background-color: #222;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* 其他樣式 */
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+section h2 {
+    font-size: 22px;
     margin-bottom: 15px;
-    color: #fff;
 }
 
-/* 浅色主题 */
-body.light-theme {
-    background-color: #f4f4f4;
-    color: #333;
+section p {
+    font-size: 18px;
 }
 
-body.light-theme .about-me {
-    background-color: #eaeaea;
-}
-
-body.light-theme .social-link {
-    background-color: #ddd;
-    color: #333;
-}
-
-body.light-theme .social-link:hover {
-    background-color: #ccc;
-}
-
-/* 主题切换按钮样式 */
+/* 主題切換按鈕樣式 */
 .theme-toggle {
     position: fixed;
     top: 20px;
@@ -157,20 +161,7 @@ body.light-theme .social-link:hover {
     z-index: 1000;
 }
 
-body.light-theme .theme-toggle {
-    background-color: #ddd;
-    color: #333;
-}
-
-.theme-toggle:hover {
-    background-color: #555;
-}
-
-body.light-theme .theme-toggle:hover {
-    background-color: #ccc;
-}
-
-/* 时间显示样式 */
+/* 時間顯示樣式 */
 .clock {
     position: fixed;
     bottom: 20px;
@@ -185,64 +176,81 @@ body.light-theme .theme-toggle:hover {
     text-align: center;
 }
 
+/* 淺色主題 */
+body.light-theme {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+body.light-theme .about-me,
+body.light-theme .hidden-section,
+body.light-theme .new-section {
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .social-link {
+    background-color: #eee;
+    color: #333;
+}
+
+body.light-theme .social-link:hover {
+    background-color: #ddd;
+}
+
+body.light-theme .theme-toggle {
+    background-color: #ddd;
+    color: #333;
+}
+
+body.light-theme .theme-toggle:hover {
+    background-color: #ccc;
+}
+
 body.light-theme .clock {
     background-color: #ddd;
     color: #333;
 }
 
-/* 隐藏新块 */
-.hidden-section {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    margin: 50px auto;
-    max-width: 600px;
-    background-color: #222;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+/* 更新文字顏色 */
+body.light-theme h1 {
+    color: #333;
 }
 
-/* 已经滑动到可视区域时的样式 */
-.hidden-section.visible {
-    opacity: 1;
-    transform: translateY(0);
+body.light-theme p {
+    color: #666;
 }
 
-.hidden-section.invisible {
-    opacity: 0;
-    transform: translateY(-50px);
+body.light-theme section h2 {
+    color: #333;
 }
 
-/* 其他样式 */
-section h2 {
-    font-size: 22px;
-    margin-bottom: 15px;
-    color: #fff;
+body.light-theme section p {
+    color: #666;
 }
 
-section p {
-    font-size: 18px;
-    color: #ccc;
-}
-
-/* 响应式设计 */
-@media (max-width: 768px) {
-    h1 {
-        font-size: 20px;
-    }
-
-    p {
-        font-size: 16px;
-    }
-
-    .social-links {
+/* 響應式設計 */
+@media (max-width: 1024px) {
+    .page-container {
         flex-direction: column;
+    }
+
+    .left-column, .center-column, .right-column {
+        flex-basis: 100%;
+        margin: 0 0 30px 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .social-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 10px;
     }
 
     .social-link {
-        width: 80px;
+        width: calc(50% - 10px);
         padding: 10px;
     }
 
@@ -253,16 +261,8 @@ section p {
 }
 
 @media (max-width: 480px) {
-    h1 {
-        font-size: 18px;
-    }
-
-    p {
-        font-size: 14px;
-    }
-
     .social-link {
-        width: 70px;
+        width: 100%;
         padding: 8px;
     }
 
