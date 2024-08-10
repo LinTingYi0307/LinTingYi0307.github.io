@@ -42,3 +42,32 @@ setInterval(updateTime, 1000);
 
 // 初始化顯示時間
 updateTime();
+
+document.addEventListener('DOMContentLoaded', function () {
+    function checkVisibility() {
+        const sections = document.querySelectorAll('.hidden-section');
+        const fadeOutBuffer = 100;  // 用于稍微延迟消失的缓冲区
+
+        sections.forEach(section => {
+            const rect = section.getBoundingClientRect();
+
+            // 当元素进入视口时显示
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                section.classList.add('visible');
+                section.classList.remove('invisible');
+            }
+
+            // 当元素离开视口时消失
+            if (rect.top + fadeOutBuffer < 0 || rect.bottom - fadeOutBuffer > window.innerHeight) {
+                section.classList.add('invisible');
+                section.classList.remove('visible');
+            }
+        });
+    }
+
+    // 初次加载时检查
+    checkVisibility();
+
+    // 滚动时检查
+    window.addEventListener('scroll', checkVisibility);
+});
