@@ -11,7 +11,7 @@ body {
 .page-container {
     display: flex;
     justify-content: center; /* 使內容在中間對齊 */
-    max-width: 1500px;
+    max-width: 80%;
     margin: 50px auto;
     padding: 0;
     height: calc(100vh - 40px); /* 設置高度以確保滾動效果 */
