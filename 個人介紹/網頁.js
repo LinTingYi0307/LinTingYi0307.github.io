@@ -71,3 +71,25 @@ document.addEventListener('DOMContentLoaded', function () {
     // 滚动时检查
     window.addEventListener('scroll', checkVisibility);
 });
+
+document.getElementById('toggle-left').addEventListener('click', function() {
+    const leftColumn = document.querySelector('.left-column');
+    if (leftColumn.style.display === 'block' || leftColumn.style.display === '') {
+        leftColumn.style.display = 'none';
+        this.textContent = '展開左半部';
+    } else {
+        leftColumn.style.display = 'block';
+        this.textContent = '收起左半部';
+    }
+});
+
+document.getElementById('toggle-right').addEventListener('click', function() {
+    const rightColumn = document.querySelector('.right-column');
+    if (rightColumn.style.display === 'block' || rightColumn.style.display === '') {
+        rightColumn.style.display = 'none';
+        this.textContent = '展開右半部';
+    } else {
+        rightColumn.style.display = 'block';
+        this.textContent = '收起右半部';
+    }
+});
