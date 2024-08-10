@@ -4,24 +4,78 @@ body {
     color: #fff;
     font-family: 'Roboto', Arial, sans-serif;
     margin: 0;
-    overflow-y: auto;
+    overflow: hidden; /* 隱藏整體滾動條 */
     transition: background-color 0.3s, color 0.3s;
 }
 
 .page-container {
     display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
+    justify-content: center; /* 使內容在中間對齊 */
+    max-width: 1500px;
     margin: 50px auto;
-    padding: 0 20px;
-}
-
-.left-column, .center-column, .right-column {
-    flex-basis: 30%;
-    margin: 0 10px;
+    padding: 0;
+    height: calc(100vh - 40px); /* 設置高度以確保滾動效果 */
+    position: relative;
 }
 
 /* 左列樣式 */
+.left-column {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 20%;
+    background-color: #222;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    box-sizing: border-box; /* 包括內邊距在內 */
+}
+
+/* 右列樣式 */
+.right-column {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 20%;
+    background-color: #222;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    box-sizing: border-box; /* 包括內邊距在內 */
+}
+
+/* 中間列樣式 */
+.center-column {
+    margin: 0 10%; /* 縮小左右列間距，讓中間部分變大 */
+    padding: 20px;
+    overflow-y: auto;
+    height: 110%; /* 使中間列佔滿整個容器的高度 */
+    background-color: #222; /* 默認背景色 */
+    box-sizing: border-box; /* 包括內邊距在內 */
+}
+
+/* 隱藏滾動條 */
+.center-column::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, and Opera */
+}
+
+.center-column {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+
+/* 調整中間列的寬度 */
+.page-container .center-column {
+    flex-basis: 70%; /* 增大中間列寬度 */
+    padding: 20px;
+}
+
+/* 確保內容不會超出視窗 */
+.left-column, .center-column, .right-column {
+    box-sizing: border-box;
+}
+
+/* 左列和右列樣式與先前相同 */
 .about-me {
     background-color: #222;
     border-radius: 10px;
@@ -210,23 +264,6 @@ body.light-theme .theme-toggle:hover {
 body.light-theme .clock {
     background-color: #ddd;
     color: #333;
-}
-
-/* 更新文字顏色 */
-body.light-theme h1 {
-    color: #333;
-}
-
-body.light-theme p {
-    color: #666;
-}
-
-body.light-theme section h2 {
-    color: #333;
-}
-
-body.light-theme section p {
-    color: #666;
 }
 
 /* 響應式設計 */
