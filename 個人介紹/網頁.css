@@ -21,7 +21,7 @@ body {
 /* 左列樣式 */
 .left-column {
     position: fixed;
-    top: 0;
+    top: 50px;
     bottom: 0;
     left: 0;
     width: 20%;
@@ -34,7 +34,7 @@ body {
 /* 右列樣式 */
 .right-column {
     position: fixed;
-    top: 0;
+    top: 50px;
     bottom: 0;
     right: 0;
     width: 20%;
@@ -208,20 +208,26 @@ section p {
 }
 
 /* 主題切換按鈕樣式 */
-.theme-toggle {
+.toggle-button {
     position: fixed;
-    top: 20px;
-    right: 20px;
     background-color: #333;
     color: #fff;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
     z-index: 1000;
 }
 
+#toggle-left {
+    top: 10px;
+    left: 10px;
+}
+
+#toggle-right {
+    top: 10px;
+    right: 10px;
+}
 /* 時間顯示樣式 */
 .clock {
     position: fixed;
@@ -276,7 +282,7 @@ body.light-theme .clock {
 /* 響應式設計 */
 
 /* 大屏幕 (1024px 以上) */
-@media (max-width: 1024px) {
+@media only screen and  (max-width: 1024px) {
     .page-container {
         flex-direction: column;
     }
@@ -286,9 +292,8 @@ body.light-theme .clock {
         margin: 0 0 30px 0;
     }
 }
-
 /* 中屏幕 (768px 以上) */
-@media (max-width: 768px) {
+@media only screen and  (max-width: 768px) {
     .toggle-button {
         display: block;
     }
@@ -321,7 +326,7 @@ body.light-theme .clock {
 }
 
 /* 小屏幕 (480px 以上) */
-@media (max-width: 480px) {
+@media only screen and  (max-width: 480px) {
     .left-column, .right-column {
         width: 100%;
         position: relative;
@@ -357,26 +362,6 @@ body.light-theme .clock {
         padding: 8px 10px;
         font-size: 18px;
     }
-}
-
-/* 切換按鈕樣式 */
-.toggle-button {
-    position: fixed;
-    top: 60px; /* 根據需要調整位置 */
-    left: 10px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    z-index: 1000;
-}
-
-#toggle-right {
-    left: auto;
-    right: 10px;
-    top: 60px;
 }
 
 
