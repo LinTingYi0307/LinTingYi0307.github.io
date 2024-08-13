@@ -1,0 +1,33 @@
+/* 基本樣式 */
+body {
+    /* background-color: #000; */
+    color: #000000;
+    font-family: 'Roboto', Arial, sans-serif;
+    margin: 0;
+    transition: background-color 0.3s, color 0.3s;
+    height: 100vh;
+    overflow-y: hidden; /* 完全隱藏滾動條 */
+}
+.center-column {
+    padding: 20px;
+    height: 100%;
+    overflow-y: scroll; /* 允許滾動但隱藏滾動條 */
+    scrollbar-width: none; /* 隱藏滾動條 (Firefox) */
+    -ms-overflow-style: none;  /* 隱藏滾動條 (IE 和 Edge) */
+    box-sizing: border-box; /* 包括內邊距在內 */
+}
+.center-column::-webkit-scrollbar {
+    display: none; /* 隱藏滾動條 (Chrome, Safari, 和 Opera) */
+}
+/* 中間列樣式 */
+.hidden-section {
+    opacity: 1;
+    transform: translateY(50px);
+    /* transition: opacity 0.6s ease-out, transform 0.6s ease-out; */
+    margin-bottom: 10px;
+    background-color: #bababa;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    color: #000000;
+}

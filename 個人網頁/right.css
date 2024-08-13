@@ -1,0 +1,21 @@
+body {
+    height: 100vh;
+    overflow-y: hidden; /* 完全隱藏滾動條 */
+}
+.new-section {
+    background-color: #cccccc;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+.center-column {
+    padding: 20px;
+    height: 100%;
+    overflow-y: scroll; /* 允許滾動但隱藏滾動條 */
+    scrollbar-width: none; /* 隱藏滾動條 (Firefox) */
+    -ms-overflow-style: none;  /* 隱藏滾動條 (IE 和 Edge) */
+    box-sizing: border-box; /* 包括內邊距在內 */
+}
+.center-column::-webkit-scrollbar {
+    display: none; /* 隱藏滾動條 (Chrome, Safari, 和 Opera) */
+}
